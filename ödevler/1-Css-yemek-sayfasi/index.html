@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.min.css">
+
+    <title>EmreYamanYazilim-Yemek</title>
+</head>
+<body>
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <div class="login">
+                <ul class="login-list">
+                    <li class="nav-links"><a href="javascript:void(0)">Giriş</a></li>
+                    <li class="nav-links"><a href="javascript:void(0)">Kayıt</a></li>
+                    <li class="nav-links"><a href="javascript:void(0)">Siparişlerim</a></li>
+                    <li class="nav-links"><a href="javascript:void(0)">Sepetim</a></li>
+                    <li class="user-basket">
+                        <a href="javascript:void(0)">
+                            <i class="bi bi-cart-fill zoom"></i>
+                            <span>13</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="navbar-wrapper"> <!--  navbar-wrapper  navbar kapsayıcısı-->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/eyy.jpg" alt="logo">
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li class="active"><a class="active" href="javascript:void(0)">YEMEKLERİMİZ</a></li>
+                        <li><a href="javascript:void(0)">ÇORBALAR</a></li>
+                        <li><a href="javascript:void(0)">ANA YEMEKLER</a></li>
+                        <li><a href="javascript:void(0)">SALATALAR</a></li>
+                        <li><a href="javascript:void(0)">BÖREKLER</a></li>
+                    </ul>
+                </div>
+                <div class="nav-search">
+                    <form action="javascript:void(0)" class="search-form">
+                        <input type="text" placeholder="    Ara...">
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6 tarif-secim">
+                <div class="col-md-12 tarif-secim-form">
+                    <form action="">
+                        <div class="col-12">
+                            <label for="yadi">Yemek Adı</label><br>
+                            <input type="text" name="yadi" id="yadi">
+                        </div>
+                        <div class="col-12 mazeme">
+                            <div class="col-9">
+                                <label for="urun-ekle">Mazemeleri yazınız</label><br>
+                                <input type="text" name="urun-ekle" id="urun-ekle">
+                            </div>
+                            <div class="col-3">
+                                <input type="submit" value="Ekle">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="textarea">Tarif</label><br>
+                            <textarea class="textarea1" name="textarea" rows="10" cols="30"
+                                      id="textarea"></textarea><br>
+                        </div>
+
+                        <input type="submit" class="kaydet" value="Yapılacak Yemeklere Kaydet">
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-md-6 tarif-yapilis ">
+                <div class="tarif-yapilis-form">
+                    <div class="col-md-12 y-scroll2">
+                        <p class="y-adi">Yapılacak yemekler</p><br>
+                        <form action="">
+                            <div class="col-6">
+                                <p class="y-adi">Patates yemeği</p>
+                                <ul class="y-scroll">
+                                    <li><a href="">patates</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">soğan</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">salça</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">tuz</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">biber</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">kapya</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">asdas</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">zczc</a><i class="bi bi-trash"></i></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6">
+                                <p class="y-adi2"> Tarifi</p>
+                                <textarea class="textarea2" name="" cols="22" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                                4 doğranmış patatesler çiğden atılarak kısık ateşte pişirilecek
+                                </textarea>
+                            </div>
+                            <div class="o-input">
+                                <input type="submit" value="Yapıldı">
+                                <input type="submit" value="İptal">
+                            </div>
+                        </form>
+                        <form action="">
+                            <div class="col-6">
+                                <p class="y-adi">Patates yemeği</p>
+                                <ul class="y-scroll">
+                                    <li><a href="">patates</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">soğan</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">salça</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">tuz</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">biber</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">kapya</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">asdas</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">zczc</a><i class="bi bi-trash"></i></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6">
+                                <p class="y-adi2"> Tarifi</p>
+                                <textarea class="textarea2" name="" cols="22" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                                4 doğranmış patatesler çiğden atılarak kısık ateşte pişirilecek
+                                </textarea>
+                            </div>
+                            <div class="o-input">
+                                <input type="submit" value="Yapıldı">
+                                <input type="submit" value="İptal">
+                            </div>
+                        </form>
+                        <form action="">
+                            <div class="col-6">
+                                <p class="y-adi">Patates yemeği</p>
+                                <ul class="y-scroll">
+                                    <li><a href="">patates</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">soğan</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">salça</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">tuz</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">biber</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">kapya</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">asdas</a><i class="bi bi-trash"></i></li>
+                                    <li><a href="">zczc</a><i class="bi bi-trash"></i></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6">
+                                <p class="y-adi2"> Tarifi</p>
+                                <textarea class="textarea2" name="" cols="22" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                                4 doğranmış patatesler çiğden atılarak kısık ateşte pişirilecek
+                                </textarea>
+                            </div>
+                            <div class="o-input">
+                                <input type="submit" value="Yapıldı">
+                                <input type="submit" value="İptal">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="y-b">
+                <h1>Daha önce yapılan yemeklerimiz</h1>
+            </div>
+            <div class="y-y">
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ol class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ol>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name="" cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1 Patatesler soyulacak
+                                2 soğan doğranıp kavrulacask
+                                3 salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="yapilanlar">
+                    <div>
+                        <div class="col-6">
+                            <p class="y-adi">Patates yemeği</p>
+                            <ul class="y-scroll">
+                                <li><a href="">patates</a></li>
+                                <li><a href="">soğan</a></li>
+                                <li><a href="">salça</a></li>
+                                <li><a href="">tuz</a></li>
+                                <li><a href="">biber</a></li>
+                                <li><a href="">kapya</a></li>
+                                <li><a href="">asdas</a></li>
+                                <li><a href="">zczc</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="col-6">
+                            <p class="y-adi2"> Tarifi</p>
+                            <textarea class="textarea2" name=""  cols="24" rows="5">
+                                1Patatesler soyulacak
+                                2soğan doğranıp kavrulacask
+                                3salça soğan kavrulduktan sonra atılacak
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

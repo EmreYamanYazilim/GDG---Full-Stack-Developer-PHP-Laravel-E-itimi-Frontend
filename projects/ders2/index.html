@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    /*margin dış boşluk ilk sıfır üst alt  2. 10px  sağ ve sol   4 tane verirsek  üst sağ  alt sol diye saat hizasinda  olur margin: 0 0 0 0 ;  margin 0 auto dersek hepsini sıfırlar*/
+    /*pading iç boşluk    */
+    /*background-color:  arka tarafa olan renk */
+    /*text-align: center; yazıyı ortalamak için*/
+    body {
+        margin: 0 10px;
+        padding: 100px;
+        background-color: #77deb7;
+    }
+    header {
+        background-color: #427502;
+        padding: 20px;
+        text-align: center;
+        color: red;
+
+    }
+    nav ul {
+        list-style-type: none; /* ** list-style-type: none; ile liste işaretlerini kaldırıyoruz. ** margin:0 ve padding:0 ile tarayıcının varsayılan olarak atadığı margin ve padding değerlerini sıfırlıyoruz.*/
+        padding: 0;
+    }
+    nav ul li {
+        display: inline-block;
+        margin-right:  10px;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 5px 10px; /*üssten ve sağdan boşluk*/
+        background-color: black;
+    }
+    section {
+        margin:2px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        /* rgba ilk parametre 0 x sağ sol kaydırma  2.  sıfır üstten alttan kaydırma 3. sprit yoğunluğu gösterir  4.blurlama şeffaflık koyuluk*/
+    }
+    form input[type="text"],
+    form textarea{
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    form input[type="submit"] {
+        width: 100%;
+        background-color: #0b100b;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+
+</style>
+
+<header>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <nav>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Useful links</a></li>
+            <li><a href="">more info</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+        </ul>
+    </nav>
+
+</header>
+<main>
+    <section>
+        <h2>about html</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, voluptatum.</p>
+    </section>
+    <section>
+        <h2>submit </h2>
+        <form>
+            <label for="fname">İsim </label><br>
+            <input type="text" name="fname" id="fname"><br>
+            <label for="lname">Soyisim</label><br>
+            <input type="text" name="lname" id="lname"><br>
+            <label for="feedback">GeriDönüş</label><br>
+            <textarea name="" id="feedback" cols="30" rows="10"></textarea><br>
+            <input type="submit" value="Gönder">
+        </form>
+    </section>
+</main>
+
+
+</body>
+</html>
