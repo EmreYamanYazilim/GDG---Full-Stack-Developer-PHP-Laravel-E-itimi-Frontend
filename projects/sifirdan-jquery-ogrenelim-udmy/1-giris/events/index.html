@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<h1>Events</h1>
+
+
+<button>Tıkla</button>
+<input type="text">
+
+<form action="">
+    <button> veri gönder</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+
+        $("button").click(function () { // buttona ulaştık tıkladığında çalışması çin alert verdik
+            alert("tıklandı");
+        });
+
+        $("button").dblclick(function () { // 2 kez tıklandığında uyarı verir
+            alert("2tıklandı");
+        });
+
+        $("button").mouseenter(function () { // mouse üzerine geldiğinde yok olur
+            $(this).hide();
+        });
+        $("button").mouseleave(function () { // mouse üzerinden çıktığında gelir
+            $(this).show();
+        });
+
+        $("input").keyup(function () {
+            console.log("yaziıyor...")// dersek  consolda her klavyeden tıkldığımız veriyi sayar keyup,keydown,keypress diye 3 tane var
+        });
+
+        $("input").hover(function () {
+            $(this).css("background-color", "red"); // üzerine geldiğimizde rengi red yapar
+        }, function () {
+            $(this).css("background-color", "white"); // üzerinden mouseyi çektiğimizde beyaz yapar
+        });
+
+        $("form").submit(function () {
+            alert("veri gönderildi");  // form elementi içindeki button elementine tıklandığında çalışması için yazılan bir kod
+        });
+
+        // on yazarak  string olarak istekleri isteyebiliriz  birden fazlada isteyebilriiz aşağıdaki örneklerdeki gibi
+
+        $("form").on("click", function () { // on yazarak array içinde gösteriyoruz  array dısındada bunu onclick olarak yazabilirdik
+            alert("tıklandı");
+        });
+
+
+        // on ile birden fazla event kullanımı  on dedikten sonra { şeklinde bir obje açabiliyorum obje ile beraber birden fazla event yazabiliyoruz
+        $("button").on({
+            mouseenter: function () {
+                $(this).hide();
+            },
+            mouseleave: function () {
+                $(this).show();
+            }
+        });
+
+
+
+
+    });
+
+</script>
+</body>
+</html>
