@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="siblings">kardeşler
+
+<div>  div parent ebeveyn
+    <p>p</p>
+    <span>span</span>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("h2").siblings().css({color: "red", border: "1px solid"}); //h2 hariç, etrafında div içinde ne kadar element varsa hepsine css verir
+        $("h2").siblings("p").css({color: "blue"}); //sadece  h2'ye kardeş olan  p elementlerine css verir
+        $("h2").nextAll().css({ // h2 den sonraki tüm elementlere ccss verir
+            color: "red",
+            border: "1px solid",
+        });
+
+
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        #panel,#flip {
+            padding: 10px;
+            font-size: 19px;
+            border: 1px solid #ccc;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        #panel{
+            padding: 50px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Stop() Metodu</h1>
+
+<button id="stop">Durdur</button>
+
+<div id="flip">Tıkla</div>
+<div id="panel">Emre Yaman Yazılım</div>
+
+<script>
+    $(document).ready(function () {
+        $("#flip").click(function () {
+            $("#panel").slideToggle(5000);
+        });
+        $("#stop").click(function () {
+            $("#panel").stop();
+        });
+
+    });
+    
+
+</script>
+</body>
+</html>

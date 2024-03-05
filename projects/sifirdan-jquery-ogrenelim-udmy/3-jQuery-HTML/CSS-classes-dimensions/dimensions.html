@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    #div {
+      background-color: red;
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Jquery ile css değleri verme </h1>
+
+
+<button class="degistir">Değiştir</button>
+<div id="div">
+
+</div>
+
+
+<script>
+  $(document).ready(function () {
+    $(".degistir").click(function () {
+      $("#div").height(300);
+      $("#div").width(300);
+    });
+
+
+  });
+
+
+</script>
+</body>
+</html>

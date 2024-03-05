@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+<input type="text" name="arama" id="arama" placeholder="Ara...">
+
+<table>
+
+  <tbody id="tablom">
+  <tr>
+    <th scope="row">1</th>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td>@fat</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td colspan="2">Larry the Bird</td>
+    <td>@twitter</td>
+  </tr>
+  </tbody>
+</table>
+
+<script>
+  $(document).ready(function () {
+    $("#arama").on("keyup",function () { // tuşa bastığında arama yapması için input içindeki id ile  keyup metodunu çağırıyoruz
+      var value = $(this).val().toLowerCase(); // value adında  değişken vererek this diyoruz yani aramaya yazarak bastığımızda valuesini getirsin ve bu getirdiğigi yazıyı küçültmesi için toLowerCase yaparak küçültüyoruz
+      //şimdi tablo içinde bulmak için tabloya ve tablodaki trlere ulaşarak filter metodunda function acacağz
+      $("#tablom tr").filter(function () {// şimdi this diyerek mevcut elementlerime ulaşıyorum toggle ile yaparak aradığım yoksa onları kapaatabiliyorum
+        //mevcut elementlerin içindek bilgileri alabilmek için toggle içinde tekrardan this yaparak text yaparak yazılara ulaşıyorum toLowerCase  yaparak harleri küçültüyorum
+        // sonra indexof yaparak  value değişkenimizi içine vererek -1 den büyükse bulucak   değilse bulunamadı diyecek
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+  });
+
+
+
+</script>
+
+</body>
+</html>
