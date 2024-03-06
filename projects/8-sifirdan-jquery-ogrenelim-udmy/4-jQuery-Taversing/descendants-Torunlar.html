@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="descendants"> div current element(mevcut eleman)
+    <p> child
+        <span>grandchild</span>
+    </p>
+    <p>
+        <span>grandchild</span>
+    </p>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("div").children().css({color: "red", fontSize: "15px"});// ilk cocuk olan p elementine css kodu verir
+        $("div").find("span").css({color: "red", backgroundColor: "blue"}); //div içindeki span elementine giderek css kodlarını ona verir
+        $("div").find("*").css({color: "red", backgroundColor: "blue"}); // div altındaki tüm elementlere css kodlarını verir
+    });
+
+
+</script>
+</body>
+</html>

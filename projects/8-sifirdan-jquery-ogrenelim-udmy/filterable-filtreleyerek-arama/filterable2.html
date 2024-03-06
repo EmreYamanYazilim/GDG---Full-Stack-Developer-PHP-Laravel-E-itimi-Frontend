@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<input type="text" name="arama" id="arama" placeholder="arama....">
+<ul>
+    <li>alyadua@gmail</li>
+    <li>naga@gmail</li>
+    <li>revenge@gmail</li>
+    <li>eyyazilim@gmail</li>
+</ul>
+
+
+<script>
+    $(document).ready(function () {
+        $("#arama").keyup(function () {
+            var arama = $(this).val().toLowerCase();
+            $("ul li").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(arama) > -1);
+            });
+        });
+
+
+    });
+
+</script>
+
+</body>
+</html>

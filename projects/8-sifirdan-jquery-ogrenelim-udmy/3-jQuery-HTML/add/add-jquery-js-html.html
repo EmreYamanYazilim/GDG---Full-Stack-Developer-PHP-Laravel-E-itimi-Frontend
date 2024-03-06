@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+<h1> function oluşturarak  jquery ,javascript ve text olarak ekleme yapma</h1>
+<button onclick="appendText()">tıkla</button>
+<br>
+
+<p>Lorem ipsum dolor.</p>
+
+
+
+<script>
+    function appendText() {
+        var textHtml = "TextHtml'le oluşturma"; //text ile html elementi oluşturma
+        var textJq = $("p").text("jQuery ile text oluşturma");
+        var textJavascript = document.createElement("p");
+        textJavascript.innerHTML = "Javascript ile text oluşturma";
+        $("body").append(textHtml, textJq, textJavascript);
+        //body.append yaparak en sona ekleriz
+        //body.prepend yaparak en başa ekleriz   ikisnin özelliği p içine ekler
+        //body.after yaparak en sona ekleriz
+        //body.before yaparak en başa ekleriz   bu son 2sinin özelliği element sonrasına ekler
+
+    }
+
+
+</script>
+
+</body>
+</html>

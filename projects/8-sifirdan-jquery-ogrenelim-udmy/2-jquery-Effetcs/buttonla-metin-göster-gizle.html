@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<h1>Buttona tıklayarak gizle veya göster</h1>
+
+<button id="gizle">Gizle</button>
+<button id="goster">Göster</button>
+<button id="goster-gizle">Göster/Gizle</button>
+<p class="yorum">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci asperiores dolore doloremque esse explicabo facilis minus, nam officiis porro possimus quibusdam veritatis voluptates! Aliquid animi assumenda dignissimos eveniet ex facilis in ipsa iusto nemo numquam officia quam quas quisquam quod repellendus sint, unde vel? Ab accusamus architecto at aut dignissimos ducimus eligendi est explicabo impedit, minima molestiae natus sequi vero. Ad deleniti deserunt error, eum ex excepturi perferendis repellat soluta veniam voluptatibus. Culpa deleniti dolor dolore eaque eos ipsa ipsam libero minima nisi nulla odio, placeat quasi quisquam rem rerum totam voluptatibus? Et, facere in iste maxime nam necessitatibus?</p>
+<p>Lorem ipsum dolor sit amet.</p>
+
+<script>
+    $(document).ready(function () {
+        $("#gizle").click(function () {
+            $("p.yorum").hide();
+        });
+        $("#goster").click(function () {// show yada hide içine 1000 diye değer verirsek hızlı yada geç kaybolmaya yarar rakkam yerine "fast" yada "slow" yazabiliriz
+            $("p.yorum").show();
+        });
+
+        $("#goster-gizle").on("click", function () { // direk click yazabiliriz yada on  içine string olarak click yazaabiliriz
+            $("p.yorum").toggle();// toggle ile göster ve gizle aynı kodda buluşur buttona tıklayınca saklar ve gösterir
+
+        });
+
+    });
+
+
+
+</script>
+
+</body>
+</html>

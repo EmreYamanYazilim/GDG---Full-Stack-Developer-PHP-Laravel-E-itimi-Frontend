@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+</head>
+<body>
+<h1>jQuery ile beraber css atama  </h1>
+
+<button>CssAta</button>
+
+<p class="btnCss">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, rem?</p>
+
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            //$("p.btnCss").css("color", "red");  // tek olarak olduğu zmaanda virgülle yazabiliriz ama çok css yapackasak property olarka yazmamız lazım aşağıdaki gibi { içinde
+
+            $("p.btnCss").css({
+                "color": "blue",
+                "font-size": "19px",
+                "font-weight": "bold",
+                "backgroundColor":"green"
+            });
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
