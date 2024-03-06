@@ -6,61 +6,80 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-icons/font/bootstrap-icons.min.css">
     <title>Document</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-primary p-4 mb-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand text-white" href="#">Yemek Tarifleri</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="#">Yemek Listesi</a>
+                    <a class="nav-link text-white active" aria-current="page" href="#">Yemek Listesi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Yemek ekle</a>
+                    <a class="nav-link text-white" href="#">Malzeme Ekle</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Yemek ekle</a>
+                    <a class="nav-link text-white" href="#">Yemek Ekle</a>
                 </li>
-
             </ul>
         </div>
     </div>
 </nav>
-<main class="container">
+
+<main class="container ">
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">
-                    Yemek ekle
+                <div class="card-header mb-2">
+                    Ürün Ekleme
                 </div>
                 <div class="card-body">
                     <div class="row">
-
                         <div class="col-md-6">
-                            <input type="text" name="text" class="form-control" id="urunAdi">
+                            <input type="text" class="form-control" placeholder="Ürün Adı" name="urunAdi" id="urunAdi">
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" name="text" class="form-control" id="">
-
+                            <button class="btn btn-success w-100" id="btnUrunEkle">Ürün Ekle</button>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="col-6"></div>
-
-
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header mb-2">
+                    Ürün Listesi
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="Ara..." name="" id="search">
+                            <ul class="list-group mt-4">
+                                <li class="list-group-item">An item <i class="bi bi-trash float-end delete-product"></i></li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 
+
+<script src="../assets/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
