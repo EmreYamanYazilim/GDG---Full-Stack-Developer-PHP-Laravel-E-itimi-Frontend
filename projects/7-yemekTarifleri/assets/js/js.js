@@ -1,42 +1,37 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    let btnUrunEkle = document.getElementById("btnUrunEkle");
-    //let urunler = [];// array olarak tutabilmek için buraya button altına veriyorum
 
-    let urunler = JSON.parse(localStorage.getItem("urunler")); //localStorageden urunlerimiz keyli veriyi kontrol edebilmemiz için çekiyorum
-    if (urunler == null) { // kontrol sonucu null dönerse  hata vermemesi için  urunleri boş array ile gösterdim
+    let btnUrunEkle = document.getElementById("btnUrunEkle");
+    let urunler = JSON.parse(localStorage.getItem("urunlerimiz"));
+    if (urunler == null  ) {
         urunler = [];
     }
-
-    //listeleme bölümü
-
     listele(urunler);
 
-
     btnUrunEkle.addEventListener("click", function () {
-
         let urunAdi = document.getElementById("urunAdi").value;
-        let isAdded = urunler.includes(urunAdi);
+        let isadded = urunler.includes(urunAdi);
 
-        if (isAdded) {
+        if (isadded) {
             alert("Bu ürün daha önce eklenmiştir");
+            console.log(urunler);
+
         }else{
             urunler.unshift(urunAdi);
-            localStorage.setItem("urunler", JSON.stringify(urunler));
+            localStorage.setItem("urunlerimiz", JSON.stringify(urunler));
             listele(urunler);
-
         }
 
-    });
 
+    });
 
     function listele(urunler) {
         if (urunler == null || (Array.isArray(urunler) && urunler.length < 1)) {
 
-            // listede ürün yokken bilgi verebiliriz
             let liElement = document.createElement("li");
-            liElement.className = "list-group-item bg-warning text-white";
-            liElement.textContent = "Henüz bir ürün yok";
+            liElement.className="list-group-item bg-warning text-white"
+            liElement.textContent = "Ürün bulunmamaktadır";
 
             let urunListesi = document.getElementById("urunListesi");
             urunListesi.innerHTML = "";
@@ -47,34 +42,16 @@ document.addEventListener("DOMContentLoaded", function () {
             urunler.forEach(function (urun, index) {
                 let liElement = document.createElement("li");
                 liElement.className = "list-group-item";
-                liElement.textContent = urun;
+                liElement.textContent=urun;
                 let iElement = document.createElement("i");
-                iElement.className = "bi bi-trash float-end delete-product";
+                iElement.className ="bi bi-trash float-end delete-product"
                 iElement.id = index;
                 urunListesi.appendChild(liElement);
                 liElement.appendChild(iElement);
-
             });
         }
-
     }
 
+
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
