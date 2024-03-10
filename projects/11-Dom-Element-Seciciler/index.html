@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+
+<button type="submit" class="btn-add" id="btnAdd">ekle</button>
+<button class="btn-delete">sil</button>
+
+<button class="btn">test1</button>
+<button class="btn btn-renk">test2</button>
+
+<ul id="itemlist">
+    <li>1.element</li>
+</ul>
+
+<hr>
+
+1<input type="checkbox" name=""  value="1">
+2<input type="checkbox" name=""  value="2">
+3<input type="checkbox" name=""  value="3">
+<hr>
+
+<p id="paragraf" title="baslı ksda">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur dolorem eos ex praesentium quidem tenetur ullam. Accusantium ad animi aperiam atque aut cum cumque dolore doloribus dolorum eaque earum excepturi fuga fugit incidunt iure maxime nemo nesciunt pariatur porro quam quasi, qui, quos recusandae sapiente sequi sint veniam voluptatem!
+</p>
+
+
+<script>
+
+
+    // let btn = document.getElementById("btnAdd"); // element döner
+    // let btn2 = document.getElementsByClassName("btn-add");  //Html Collection döner
+    // let btn3 = document.getElementsByTagName("button");    //Html Collection döner
+
+    // console.log(btn);
+    // console.log(btn2);
+    // console.log(btn3);
+
+    // btn.style.fontSize = "50px";// direk btn ile
+    // btn.style.color = "red";
+
+    // let css = {
+    //     fontSize: "50px",
+    //     color: "red"
+    // }
+    //
+
+
+    /*
+    *  bir hedef nesne bir veya fazla kaynak nesnenein özelliklerini kopyalamak için kukkanılır
+    * */
+    // const nesne1 = {a: 1, b: 2};
+    // const nesne2 = {c: 3, d: 4};
+    //
+    // let sonuc = Object.assign(nesne1, nesne2);
+    // console.log(sonuc);
+    //
+    //
+    //
+    // let btnQuery = document.querySelector("#btnAdd");
+    // let btnQuery2 = document.querySelector(".btn-add");
+    // let btnQuery3 = document.querySelector("button");
+    // let buttonlar = document.querySelectorAll(".btn-add");
+
+
+    // jQuery bölümü
+
+    let btn1 = $("#btnAdd");
+    let btn2 = $(".btn-add");
+    let btn3 = $("button");
+    // console.log(btn1);
+    // console.log(btn2);
+    // console.log(btn3);
+
+    //coklu element
+    let cokluElement = $("#btnAdd,.btn-add");
+    console.log(cokluElement);
+
+    let paragrafCss = {
+        color: "blue",
+        backgroundColor: "green",
+        fontSize: "20px"
+    }
+    // 1. yöntem  çoklu style
+    $("p").css(paragrafCss);
+    // 2. tekli style
+    $("p").css("color","red");
+
+    $("#btnAdd").click(function (event) {
+        event.preventDefault();
+
+        for (let i = 0; i < 10; i++) {
+
+            $("itemlist").append(`<li>${i}.elenman</li>`);
+        }
+
+    });
+
+
+
+</script>
+
+</body>
+</html>
