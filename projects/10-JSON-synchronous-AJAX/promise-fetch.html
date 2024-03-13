@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>synchronous</title>
+</head>
+<body>
+
+<!--
+
+**sekron
+sırayla yapılan işlemlerdir
+sırdaki işleme geçilmeden önce  mevcut işlemleri tmamalaması gerekir
+
+
+
+**asenkron
+aynı anda yapılan işlemdir
+sıradaki işleme geçmeden mevcut işlemide ikisinide devam etirebildiğin
+arka planda gerçekleştirilir
+
+
+ **promise yaklaşım
+ promise Js'de asenkron işlemleri temsil eden bir nesnedir
+ asenkron işlemleri daha  kolay yönetilebilmek ve anlaşılr şekilde ele almak için kullanılır
+
+-->
+
+
+
+<script>
+
+
+    // let promise = new Promise((resolve, reject) => {
+    //     // asenkron işlemi burda yapılır
+    //     let result = true;
+    //     if (result) {
+    //         resolve("işlem başarılı");
+    //     }else {
+    //         reject("işlem başarısız");
+    //     }
+    //
+    // });
+    // promise.then(value => {
+    //     // promis başarı ile çözüldüğünde çalışır
+    //     console.log(value);
+    // }).catch(error => {
+    //     // promis başarısız ise çalışır
+    //     console.log(error);
+    // })
+    //
+    //     .finally(() => {
+    //          // promis tamamlandığı için çalışır
+    //          console.log("promis tamamlandı");
+    //     });
+    //
+
+    // let apiUrl = "https://jsonplaceholder.typicode.com/posts/1";
+    // fetch(apiUrl)
+    //     .then(function (response) {
+    //         // işlem başarılı şekilde geliyorsa. http status 200-299-> arası olumu cevaplardır
+    //
+    //         // olumlu olmadığı durumda ise
+    //
+    //         if (!response.ok) {
+    //             throw Error("istek sırasında ağ hatası");
+    //
+    //         }
+    //         return response.json();
+    //
+    //
+    //     }).then(function (data) {
+    //     console.log(data);
+    //
+    // }).catch(function (error) {
+    //     console.log("hata olustu", error);
+    // }).finally(function () {
+    //     // promis tamamlandığı için çalışır
+    //     console.log("promis tamamlandı");
+    //
+    // });
+    // then'lerle  kaç işlem  varsa ayrı ayrı  kullanıyoruz  hata varsa catch ile yakalayarak  gösteriyoruz
+    // eğer hata olsa bile devam et diyorsak finally yaparak devam ettiryoruz
+
+
+
+    // POST ÖRNEĞİ
+
+    function postData(url, data) {
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json" // içerik tipini json olarak belirledim
+
+            },
+            body: JSON.stringify(data), // body içinde strin olarak yollamak için stringify yaptık
+
+        })
+            .then(function (response) {
+                // yanıt geldiğinde
+                return response.json()
+
+            })
+            .then(function (data) {
+                console.log(data);
+
+            })
+            .catch(function (error) {
+                console.log("hata", error);
+
+            })
+            .finally(function () {
+                 // promis tamamlandığı için çalışır
+                 console.log("tamamlandı");
+            });
+    }
+    let jsonData = {
+        title: "test",
+        body: "ici",
+        userId: 1,
+
+    }
+     let apiUrl = "https://jsonplaceholder.typicode.com/posts";
+     postData(apiUrl, jsonData);
+
+
+
+</script>
+
+</body>
+</html>

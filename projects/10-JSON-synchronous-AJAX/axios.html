@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../assets/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<script>
+
+    //response içindeki data olduğunu bilerek istek sonucunda veriyi cekiyoruz
+    axios.get("https://jsonplaceholder.typicode.com/posts/1")
+        .then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.log("hata",error);
+    });
+
+    let jsonData = {
+        title: "test",
+        body: "ici",
+        userId: 1,
+
+    }
+    axios.post("https://jsonplaceholder.typicode.com/posts")
+        .then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.log("hata",error);
+        });
+
+
+
+</script>
+
+</body>
+</html>
