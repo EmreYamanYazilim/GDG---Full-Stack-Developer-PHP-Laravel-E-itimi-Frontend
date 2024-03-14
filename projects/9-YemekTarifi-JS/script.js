@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (completedList == null) {
         completedList = [];
     }
-    let yemekListesi = JSON.parse(localStorage.getItem("yemek_listesi"));
+    let yemekListesi = JSON.parse(localStorage.getItem("yemek-listesi"));
 
     if (yemekListesi == null) {
         yemekListesi = [];
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     yemekListesi.splice(yemekID, 1);
-                    localStorage.setItem("yemek_listesi", JSON.stringify(yemekListesi));
+                    localStorage.setItem("yemek-listesi", JSON.stringify(yemekListesi));
                     listele(yemekListesi, foodList, true);
                     Swal.fire({
                         title: "Islem Basarili",
@@ -70,10 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     let newComplete = yemekListesi.splice(yemekID, 1);
-                    completedList = completedList.concat(newComplete);
+                    completedList = completedList.concat(newComplete); //dahil et
 
                     localStorage.setItem("completed_list", JSON.stringify(completedList));
-                    localStorage.setItem("yemek_listesi", JSON.stringify(yemekListesi));
+                    localStorage.setItem("yemek-listesi", JSON.stringify(yemekListesi));
 
                     listele(yemekListesi, foodList, true);
                     listele(completedList, completedListElement);
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
             listElement.innerHTML = "Listede eleman yok";
         }
 
-        yemekler.forEach(function (val, index, arr) {
+        yemekler.forEach(function (val, index) {
             let satirElement = document.createElement("div");
             satirElement.className = "col-md-6 mt-4";
 

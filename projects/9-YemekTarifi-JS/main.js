@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let yemek = {
         yemekAdi: "",
         yemekTarif: "",
-        icindekiler: [],
+        icindekiler: []
     };
 
     let icindekiler = [];
@@ -80,12 +80,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let elemenIsProductDelete = element.className.includes("delete-product-content");
 
 
-        let urunAdi = false;// alt ilealakalı
+        let urunAdi = false;// alt ilealakalı bir if döngüsü içinde buna yer vericem
 
-        if (elementIsProductAdd && // + butona tuklandı mı
-            idExistsUrunler(element.id) && // urun var mı
+        if (elementIsProductAdd &&  // + butona tuklandı yakalam bölümü
+            idExistsUrunler(element.id) && // urun var mı değerini  ürünAdi'dan önce vererek ürün var mı yoku diye bakarak hatadan kurtulduk
             (urunAdi = urunler[element.id]) &&
-            !isNameExistsIcindekiler(urunAdi)// urun tekrar eklemeyi engelleme
+            !isNameExistsIcindekiler(urunAdi)// urun tekrar eklemeyi engelleme içindekiler yoksa ekle (undefind gelirse ekler)
         ) {
 
 
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             let parentli = element.parentElement;
             parentli.style.textDecoration = "line-through"; // üstünü çizme
-            element.style.pointerEvents = "none"; //+ işareti devre dışu bırakıldı
+            element.style.pointerEvents = "none"; //+ işareti devre dışı bırakıldı
             element.style.opacity = "0.2"; //+ işareti renk doygunluğunu düşürdü
 
 
@@ -112,23 +112,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
         if (elemenIsProductDelete &&
-            element.hasAttributes("data-id") &&
-            (elmentID = element.getAttribute("data-id")) &&
+            element.hasAttributes("data-id") && // data id adında bir attirebute var mı
+            (elmentID = element.getAttribute("data-id")) && // element id varsa data id getir  elementid eşitle
             idExistsUrunler(elmentID) &&
             (urunAdi = urunler[elmentID]) &&
-            isNameExistsIcindekiler(urunAdi)
-        )
-        {
+            isNameExistsIcindekiler(urunAdi)// içindekilerde varsa devam et
+        ) {
 
-            icindekiler = icindekiler.filter(product => product.name !== urunAdi);
+            icindekiler = icindekiler.filter(product => product.name !== urunAdi); // içindekilerin hepsine bak filitrele produck olarak getir produck namesi urun adina eşitdeğilse
             urunIcerigiListele(icindekiler);
-            yemek.icindekiler = icindekiler;
+            yemek.icindekiler = icindekiler; // yemek objesi içindeki içindekiler arrayı ile son elimizde kalan içindekileri eşitledik
 
-            let iElement = document.getElementById("i");
+            let iElement = document.getElementById(elementID);
             iElement.style.pointerEvents = "auto";
             iElement.style.opacity = "1";
             let parentli = iElement.parentElement;
-            parentli.style.textDecoration;
+            parentli.style.textDecoration ="none"; // silme işleminden sonra üstü çizili olanı eski haline getirme
         }
 
 
@@ -137,44 +136,48 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     icerikListesi.addEventListener("input", function (eventInput) {
         var degisenElement = eventInput.target;
-        if (degisenElement.classList.contains("mikar")) {
+        if (degisenElement.classList.contains("miktar")) { // contains içeriyor mu demek  miktar adında bir klası var mı
 
             let mitarUrunID = degisenElement.getAttribute("data-id")
             icindekiler.find(function (item) {
-                if ( item.id == mitarUrunID) {
+                if (item.id === mitarUrunID) {
                     item.miktar = degisenElement.value;
 
                 }
-
-
             });
+            console.log(icindekiler);
+
         }
 
 
     });
 
     btnKaydet.addEventListener("click", function () {
-        if (btnKaydet) {
-            yemekListesi.unshift(yemek);
-            localStorage.setItem("yemek-listesi", JSON.stringify(yemekListesi))
+        if (!yemekBaslikKontrol()) {
+            yemekListesi.push(yemek);
+            localStorage.setItem("yemek-listesi", JSON.stringify(yemekListesi));
 
             Swal.fire({
-                title: "Good job!",
-                text: "You clicked the button!",
+                title: "İşlem Başarılı!",
+                text: "Tebrikler Yemek Eklendi!",
                 icon: "success"
             });
         } else {
             Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
+                icon: "warning",
+                title: "Başarısız İşlem !!!",
+                text: "Daha önce aynı isimle yemek eklenmiş",
             });
         }
 
 
     });
+
+
+
+
     function idExistsUrunler(id) {//true dönerse ürün var  false gelirse yok
-        return urunler[id] !== undefined;
+        return urunler[id] !== undefined; // bulunamadığı zamanda undefined verir o değilse bulunmuş olacak
 
     }
 
@@ -188,9 +191,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         // tekrar ürün eklenmemesi için
 
-        return icindekiler.find(item => item.name === name) !== undefined;
+        return icindekiler.find(item => item.name === name) !== undefined; // undefined verirse daha önce verilmediğini gösterir
 
 
+    }
+
+    function yemekBaslikKontrol() {
+        return yemekListesi.find(item => item.yemekAdi === yemek.yemekAdi) !== undefined;
     }
 
 
@@ -201,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
              */
 
             let liElement = document.createElement("li");
-            liElement.className = "list-group-item bg-warning text-white";
+            liElement.className = "list-group-item bg-warning text-white ";
             liElement.textContent = "Henüz Listede bir ürün yok.";
 
             urunListesi.innerHTML = "";
@@ -248,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let iElement = document.createElement("i");
                 iElement.className = "bi bi-trash delete-product-content";
-                iElement.setAttribute("for", "miktar-" + urun.id); // burada hata var
+                iElement.setAttribute("data-id", urun.id);
 
                 let labelElement = document.createElement("label");
                 labelElement.setAttribute("for", "miktar-" + urun.id);

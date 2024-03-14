@@ -5,9 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/bootstrap-icons/font/bootstrap-icons.min.css">
-    <title>Document</title>
 </head>
 <body>
 
@@ -38,12 +38,13 @@
 <main class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-success" role="alert">
                 <h4 class="mb-0">
                     Yemek Listesi
                 </h4>
                 <div class="row" id="foodList">
                     <div class="col-md-6">
+
                         <div class="card">
                             <h5 class="card-header"><strong>Yemek Adi: </strong>Domates Corbasi</h5>
                             <div class="card-body">
@@ -61,7 +62,8 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <button class="btn btn-danger col me-5 delete-food">Sil</button>
-                                <button class="btn btn-success col ">Yapildi</button>
+                                <!-- kendini sutun olarak algılaması için col yazdım  -->
+                                <button class="btn btn-success col">Yapildi</button>
                             </div>
 
                         </div>
@@ -71,7 +73,7 @@
         </div>
 
         <div class="col-md-6">
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-danger" role="alert">
                 <h4 class="mb-0">
                     Tamamlanan Yemek Listesi
                 </h4>
@@ -87,6 +89,7 @@
 
 <script src="../assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
+<!--<script src="js.js"></script>-->
 <script src="script.js"></script>
 </body>
 </html>
