@@ -4,5 +4,5 @@ full stack developer  frontend   ve back ende olmak üzere 2 bölümde  devam ed
 
 ![eCommerceTema](https://github.com/user-attachments/assets/c407b098-e525-47a6-87dc-00c34be725dc)
 
- eCommerceTema bitmiş hali video olarak  aşağıda 
+ eCommerceTema bitmiş halini görmek isterseniz  linke tıklayın 
          https://youtu.be/-DZlWfDz62M
